@@ -2,7 +2,7 @@
   <CDrawer
     v-model="visible"
     height="100vh"
-    :mobile-breakpoint="600"
+    :mobile-breakpoint="mobileBreakpoint"
   >
     <h2
       class="text-align-center c-cursor"
@@ -295,6 +295,7 @@ import {
   computed,
   onBeforeMount,
   inject,
+onBeforeUnmount,
 } from 'vue'
 
 import {
@@ -305,15 +306,11 @@ import {
 import { helpers }
   from '@long2x/cresh-ui'
 
-const $breakPoints = inject<{
-  XS: number
-}>('$breakPoints')
+// boolean to diplay/hide the app drawer
+const visible = ref<boolean>(true)
 
-const visible = ref<boolean>((
-  $breakPoints
-    && document.body.clientWidth < $breakPoints?.XS
-  ) ? false : true)
-
+// display the view for mobile if width is under 600px
+const mobileBreakpoint = 600
 const route = useRoute()
 const router = useRouter()
 
@@ -321,16 +318,10 @@ const currentRoute = computed(
   () => route.name,
 )
 
-
-
 function goto (routeName: string) {
   router.push({
     name: routeName,
   })
-  if ($breakPoints
-    && document.body.clientWidth < $breakPoints?.XS) {
-    visible.value = false
-  }
 }
 
 onBeforeMount(() => {
@@ -340,6 +331,20 @@ onBeforeMount(() => {
       visible.value = !visible.value
     }
   })
+  const currentBreakPoint = inject<number>('breakpoint') || window.innerWidth
+  visible.value = currentBreakPoint > mobileBreakpoint
+
+  // subscribe to breakpoint change
+  helpers.pubSubHelper.subscribe('breakpoint-change', {
+    key: 'app-drawer',
+    callback: (bp: number) => {
+      visible.value = bp > mobileBreakpoint
+    }
+  })
+})
+
+onBeforeUnmount(() => {
+  helpers.pubSubHelper.unsubscribe('breakpoint-change', 'app-drawer')
 })
 
 </script>
