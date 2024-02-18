@@ -1,0 +1,36 @@
+{
+  "locales": {
+    "fr": "fr-FR",
+    "en": "en-US"
+  },
+  "tooltips": {
+    "change_locale": "Change the translation"
+  },
+  "home": {
+    "short_description": "Cresh-UI is a library that contains a set of high-quality components for building rich and interactive user interfaces.",
+    "env_support": "Browser Support",
+    "last_2_versions": "Last 2 versions",
+    "installation": "Installation",
+    "installation_description": "We recommend using npm, yarn, or pnpm for installation, not only does this make development easier, but it also allows you to take advantage of the rich ecosystem of JavaScript packages and tools.",
+    "usage": "Usage",
+    "import_styles_manually": "Importing style files",
+    "exposed_exports": "The following routes are available for import",
+    "imports": {
+      "cresh-ui": "Main entry point.",
+      "ui": "All UI components",
+      "icons": "Only icon components",
+      "form-controls": "All components for creating forms",
+      "directives": "Only directives",
+      "helpers": "Only utility functions",
+      "plugins": "Only plugins",
+      "style.css": "Default style of cresh-ui",
+      "default-theme.css": "Default theme file",
+      "c-notify.scss": "Sass file for notify plugin"
+    }
+  },
+
+  "banner": {
+    "website_under_construction": "The site is still under construction..."
+  }
+  
+}
