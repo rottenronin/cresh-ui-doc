@@ -1,9 +1,8 @@
 <template>
   <section id="home-page">
-    Cresh ui contains a set of high quality components and demos for building rich, interactive user interfaces. 
-
+    {{ $t('home.short_description') }}
     <h2 id="environment-support">
-      Environment Support
+      {{ $t('home.env_support') }}
     </h2>
 
     <div class="dumi-default-table">
@@ -45,11 +44,21 @@
           </thead>
           <tbody>
             <tr>
-              <td>last 2 versions</td>
-              <td>last 2 versions</td>
-              <td>last 2 versions</td>
-              <td>last 2 versions</td>
-              <td>last 2 versions</td>
+              <td>
+                {{ $t('home.last_2_versions') }}
+              </td>
+              <td>
+                {{ $t('home.last_2_versions') }}
+              </td>
+              <td>
+                {{ $t('home.last_2_versions') }}
+              </td>
+              <td>
+                {{ $t('home.last_2_versions') }}
+              </td>
+              <td>
+                {{ $t('home.last_2_versions') }}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -57,11 +66,13 @@
     </div>
 
     <div>
-      <h3>Installation</h3>
+      <h3>
+        {{ $t('home.installation') }}
+      </h3>
 
-      Using npm or yarn or pnpm
-      We recommend using npm or yarn or pnpm to install, it not only makes development easier, but also allow you to take advantage of the rich ecosystem of Javascript packages and tooling.
-
+      <p>
+        {{ $t(('home.installation_description')) }}
+      </p>
       <CTabs >
         <CTab
           name="npm"
@@ -93,7 +104,7 @@
     </div>
 
     <div>
-      <h3>Usage</h3>
+      <h3>{{ $t('home.usage') }}</h3>
       <pre class="prism-code language-jsx">
         <code>
           import CreshUI from '@long2x/cresh-ui'
@@ -103,7 +114,7 @@
       </pre>
 
       <p>
-        And import stylesheets manually:
+        {{ $t('home.import_styles_manually') }}
       </p>
       <pre class="prism-code language-jsx">
         <code>
@@ -113,8 +124,10 @@
     </div>
 
     <div>
-      <h3>Exposed exports</h3>
-      The following export paths exist for the ui framework:
+      <h3>{{ $t('home.exposed_paths') }}</h3>
+      <p>
+        {{ $t('home.exposed_paths_description') }}
+      </p>
 
       <CDatatable
         no-footer
@@ -132,54 +145,28 @@
             sortable: false,
           },
         ]"
-        :items="[
-          {
-            name: 'cresh-ui',
-            description: 'Main entry point.'
-          },
-          {
-            name: 'ui',
-            description: 'All ui components'
-          },
-          {
-            name: 'icons',
-            description: 'all svg icons',
-          },
-          {
-            name: 'form-controls',
-            description: 'All form components'
-          },
-          {
-            name: 'directives',
-            description: 'All directives'
-          },
-          {
-            name: 'helpers',
-            description: 'Functions that may useful'
-          },
-          {
-            name: 'plugins',
-            description: 'All plugins'
-          },
-          {
-            name: 'style.css',
-            description: 'Default framework style file'
-          },
-          {
-            name: 'default-theme.css',
-            description: 'Default theme file'
-          },
-          {
-            name: 'c-notify.scss',
-            description: 'c-notify sass file'
-          }
-        ]"
+        :items="importsArray.map(key => ({
+          name: key,
+          description: $t(`home.imports.${key.replace('.', '_')}`)
+        }))"
       />
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
+const importsArray = [
+  'cresh-ui',
+  'ui',
+  'icons',
+  'form-controls',
+  'directives',
+  'helpers',
+  'plugins',
+  'style.css',
+  'default-theme.css',
+  'c-notify.scss'
+]
 </script>
 
 <style lang="scss">

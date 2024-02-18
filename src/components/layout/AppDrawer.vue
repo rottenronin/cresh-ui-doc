@@ -12,8 +12,8 @@
     </h2>
 
     <CDrawerItem
-      :selected="currentRoute === 'icons'"
-      @click="goto('icons')"
+      :selected="currentRoute === '/icons'"
+      @click="goto('/icons')"
     >
       <div class="text">
         Icons
@@ -35,8 +35,8 @@
       </template>
 
       <CDrawerItem
-        :selected="currentRoute === 'inputs'"
-        @click="() => goto('inputs')"
+        :selected="currentRoute === '/form-controls/input'"
+        @click="() => goto('/form-controls/input')"
       >
         <div class="text">
           c-input
@@ -44,8 +44,8 @@
       </CDrawerItem>
 
       <CDrawerItem
-        :selected="currentRoute === 'checkboxes'"
-        @click="() => goto('checkboxes')"
+        :selected="currentRoute === '/form-controls/checkbox'"
+        @click="() => goto('/form-controls/checkbox')"
       >
         <div class="text">
           c-checkbox
@@ -53,8 +53,8 @@
       </CDrawerItem>
 
       <CDrawerItem
-        :selected="currentRoute === 'selects'"
-        @click="() => goto('selects')"
+        :selected="currentRoute === '/form-controls/select'"
+        @click="() => goto('/form-controls/select')"
       >
         <div class="text">
           c-select
@@ -62,8 +62,8 @@
       </CDrawerItem>
 
       <CDrawerItem
-        :selected="currentRoute === 'datetimeinputs'"
-        @click="() => goto('datetimeinputs')"
+        :selected="currentRoute === '/form-controls/datetimeinput'"
+        @click="() => goto('/form-controls/datetimeinput')"
       >
         <div class="text">
           c-datetime-input
@@ -71,8 +71,8 @@
       </CDrawerItem>
 
       <CDrawerItem
-        :selected="currentRoute === 'fileinputs'"
-        @click="() => goto('fileinputs')"
+        :selected="currentRoute === '/form-controls/fileinput'"
+        @click="() => goto('/form-controls/fileinput')"
       >
         <div class="text">
           c-file-input
@@ -80,8 +80,8 @@
       </CDrawerItem>
 
       <CDrawerItem
-        :selected="currentRoute === 'phonenumberinput'"
-        @click="() => goto('phonenumberinput')"
+        :selected="currentRoute === '/form-controls/phoneinput'"
+        @click="() => goto('/form-controls/phoneinput')"
       >
         <div class="text">
           c-phone-input
@@ -90,8 +90,8 @@
     </CDrawerCollapsible>
 
     <CDrawerItem
-      :selected="currentRoute === 'notify'"
-      @click="() => goto('notify')"
+      :selected="currentRoute === '/notify'"
+      @click="() => goto('/notify')"
     >
       <div class="text">
         notif
@@ -99,8 +99,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'accordion'"
-        @click="() => goto('accordion')"
+        :selected="currentRoute === '/accordion'"
+        @click="() => goto('/accordion')"
     >
       <div class="text">
         Accordion
@@ -108,8 +108,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'switch-button'"
-        @click="() => goto('switch-button')"
+        :selected="currentRoute === '/switchbutton'"
+        @click="() => goto('/switchbutton')"
     >
       <div class="text">
         Switch button
@@ -117,8 +117,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'tooltip'"
-        @click="() => goto('tooltip')"
+        :selected="currentRoute === '/tooltip'"
+        @click="() => goto('/tooltip')"
     >
       <div class="text">
         Tooltip
@@ -126,8 +126,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'tabs'"
-        @click="() => goto('tabs')"
+        :selected="currentRoute === '/tabs'"
+        @click="() => goto('/tabs')"
     >
       <div class="text">
         c-tabs
@@ -135,8 +135,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'charts'"
-        @click="() => goto('charts')"
+        :selected="currentRoute === '/chart'"
+        @click="() => goto('/chart')"
     >
       <div class="text">
         charts
@@ -144,8 +144,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'slider'"
-        @click="() => goto('slider')"
+        :selected="currentRoute === '/slider'"
+        @click="() => goto('/slider')"
     >
       <div class="text">
         c-slider
@@ -153,8 +153,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'steps'"
-        @click="() => goto('steps')"
+        :selected="currentRoute === '/steps'"
+        @click="() => goto('/steps')"
     >
       <div class="text">
         c-step
@@ -162,8 +162,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'menu'"
-        @click="() => goto('menu')"
+        :selected="currentRoute === '/menu'"
+        @click="() => goto('/menu')"
     >
       <div class="text">
         c-menu
@@ -171,8 +171,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-      :selected="currentRoute === 'modal'"
-      @click="() => goto('modal')"
+      :selected="currentRoute === '/modal'"
+      @click="() => goto('/modal')"
     >
       <div class="text">
         c-modal
@@ -180,8 +180,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'dropdown'"
-        @click="() => goto('dropdown')"
+        :selected="currentRoute === '/dropdown'"
+        @click="() => goto('/dropdown')"
     >
       <div class="text">
         c-dropdown
@@ -189,8 +189,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'datatable'"
-        @click="() => goto('datatable')"
+        :selected="currentRoute === '/datatable'"
+        @click="() => goto('/datatable')"
     >
       <div class="text">
         c-datatable
@@ -198,8 +198,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-        :selected="currentRoute === 'button'"
-        @click="() => goto('button')"
+        :selected="currentRoute === '/button'"
+        @click="() => goto('/button')"
     >
       <div class="text">
         c-button
@@ -215,16 +215,16 @@
         Files components
       </template>
       <CDrawerItem
-        :selected="currentRoute === 'document-item'"
-        @click="() => goto('document-item')"
+        :selected="currentRoute === '/documentitem'"
+        @click="() => goto('/documentitem')"
       >
         <div class="text">
           c-document-item
         </div>
       </CDrawerItem>
       <CDrawerItem
-        :selected="currentRoute === 'file-upload-zone'"
-        @click="() => goto('file-upload-zone')"
+        :selected="currentRoute === '/fileuploadzone'"
+        @click="() => goto('/fileuploadzone')"
       >
         <div class="text">
           c-file-upload-zone
@@ -232,8 +232,8 @@
       </CDrawerItem>
 
       <CDrawerItem
-        :selected="currentRoute === 'document-viewer'"
-        @click="() => goto('document-viewer')"
+        :selected="currentRoute === '/documentviewer'"
+        @click="() => goto('/documentviewer')"
       >
         <div class="text">
           c-document-viewer
@@ -242,8 +242,8 @@
     </CDrawerCollapsible>
 
     <CDrawerItem
-      :selected="currentRoute === 'tag-page'"
-      @click="() => goto('tag-page')"
+      :selected="currentRoute === '/tag'"
+      @click="() => goto('/tag')"
     >
       <div class="text">
         c-tag
@@ -251,8 +251,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-      :selected="currentRoute === 'alert-page'"
-      @click="() => goto('alert-page')"
+      :selected="currentRoute === '/alert'"
+      @click="() => goto('/alert')"
     >
       <div class="text">
         c-alert
@@ -260,8 +260,8 @@
     </CDrawerItem>
 
     <CDrawerItem
-      :selected="currentRoute === 'yup-helper'"
-      @click="() => goto('yup-helper')"
+      :selected="currentRoute === '/form-controls/yupvalidation'"
+      @click="() => goto('/form-controls/yupvalidation')"
     >
       <div class="text">
         yup-helper
@@ -278,8 +278,8 @@
       </template>
 
       <CDrawerItem
-        :selected="currentRoute === 'date-range-filters'"
-        @click="() => goto('date-range-filters')"
+        :selected="currentRoute === '/daterangefilters'"
+        @click="() => goto('/daterangefilters')"
       >
         <div class="text">
           date-range-filters
@@ -295,7 +295,7 @@ import {
   computed,
   onBeforeMount,
   inject,
-onBeforeUnmount,
+  onBeforeUnmount,
 } from 'vue'
 
 import {
@@ -318,10 +318,8 @@ const currentRoute = computed(
   () => route.name,
 )
 
-function goto (routeName: string) {
-  router.push({
-    name: routeName,
-  })
+function goto (routeName: typeof route.name) {
+  router.push(routeName)
 }
 
 onBeforeMount(() => {
