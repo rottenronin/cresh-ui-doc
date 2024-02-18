@@ -1,0 +1,1 @@
+import{_ as a,r as o,o as r,e as l,f as t,w as s,g as c}from"./index-kt3BPNUV.js";const n={};function _(f,p){const e=o("CAlert");return r(),l("div",null,[t(e,{type:"success"},{default:s(()=>[c("Simple alert")]),_:1}),t(e,{class:"alt",type:"success"},{default:s(()=>[c("Alt success")]),_:1})])}const d=a(n,[["render",_]]);export{d as default};
