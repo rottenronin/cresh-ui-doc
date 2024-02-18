@@ -1,28 +1,15 @@
 <template>
   <div id="app-wrapper">
     <CAlert
-      class="alt no-margin"
+      class="alt no-margin text-center"
       type="warning"
     >
-      The site is still under construction...
+      {{ $t('banner.website_under_construction') }}
     </CAlert>
     <div id="app-content">
       <AppDrawer />
       <main id="app-body">
-        <CHeader>
-          <!-- menu trigger to show/hide sidebar -->
-          <CIcon
-            name="burger-menu"
-            color="primary"
-            class="c-mr-15 cursor-pointer"
-            @click="onToggle"
-          />
-
-          <div class="flex-1" />
-          <div>
-
-          </div>
-        </CHeader>
+        <AppHeader />
         <section class="router-view-content">
           <router-view />
         </section>
@@ -32,14 +19,16 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  helpers,
-} from '@long2x/cresh-ui'
+import { useRoute } from 'vue-router'
 import AppDrawer from './components/layout/AppDrawer.vue'
+import AppHeader from './components/layout/AppHeader.vue'
+import { watch } from 'vue'
 
-function onToggle() {
-  helpers.pubSubHelper.publish('toggle-drawer')
-}
+const route = useRoute()
+
+watch(() => route, () => {
+  console.log('-- on route change', route.name)
+})
 </script>
 
 <style lang="scss">
