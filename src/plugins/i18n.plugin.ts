@@ -5,12 +5,14 @@ import {
 import frJson from '../locales/fr.json'
 import enJson from '../locales/en.json'
 
-export default createI18n({
+const setupI18n = (locale = 'fr') => createI18n({
   legacy: false,
-  locale: 'fr',
+  locale,
   fallbackLocale: 'fr',
   messages: {
     fr: frJson,
     en: enJson,
   }
 })
+
+export default setupI18n

@@ -9,8 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@long2x/cresh-ui": "5.16.8",
-    "@types/node": "^20.11.19",
+    "@long2x/cresh-ui": "5.16.9",
+    "@types/node": "20.11.19",
+    "localforage": "^1.10.0",
     "vue": "3.4.15",
     "vue-i18n": "^9.9.1",
     "vue-router": "^4.2.5",

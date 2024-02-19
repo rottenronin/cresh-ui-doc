@@ -11,13 +11,16 @@ import '@long2x/cresh-ui/style.css'
 // import cresh-ui default theme
 import '@long2x/cresh-ui/default-theme.css'
 import i18nPlugin from './plugins/i18n.plugin'
+import { localforageService } from './services'
 
 const app = createApp(App)
 
 app.component('CCodeSnippet', CCodeSnippetVue)
 
-app.use(CreshUI)
-app.use(i18nPlugin)
+const savedLocale = await localforageService.getItem('locale') || 'fr'
+
+app.use(CreshUI as any)
+app.use(i18nPlugin(savedLocale))
 app.use(routerPlugin)
 
 app.mount('#app')
