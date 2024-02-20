@@ -15,8 +15,8 @@
       <CDropdown
         v-model="isLocalesDropdownVisible"
         :pre-selected-item="{
-          key: 'fr',
-          value: i18n.t('locales.fr'),
+          key: currentLocale.value,
+          value: i18n.t(`locales.${currentLocale.value}`),
         }"
         :items="[{
           key: 'fr',
@@ -66,21 +66,23 @@ import {
 
 import { useI18n } from 'vue-i18n'
 import {
-  // computed,
+  computed,
   ref,
 } from 'vue'
+import { localforageService } from '../../services'
 
 const i18n = useI18n()
 
 const isLocalesDropdownVisible = ref(false)
 
-// const currentLocale = computed(() => i18n.locale)
+const currentLocale = computed(() => i18n.locale)
 
 function onToggle() {
   helpers.pubSubHelper.publish('toggle-drawer')
 }
 
-function onLocaleChange({ key }: { key: string}) {
+async function onLocaleChange({ key }: { key: string}) {
   i18n.locale.value = key
+  await localforageService.setItem('locale', key)
 }
 </script>

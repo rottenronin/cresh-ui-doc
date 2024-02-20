@@ -19,16 +19,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
 import AppDrawer from './components/layout/AppDrawer.vue'
 import AppHeader from './components/layout/AppHeader.vue'
-import { watch } from 'vue'
-
-const route = useRoute()
-
-watch(() => route, () => {
-  console.log('-- on route change', route.name)
-})
 </script>
 
 <style lang="scss">
