@@ -6,7 +6,7 @@
       v-model="form.email"
       name="email"
       label="email"
-      :error-message="errors.email"
+      :error-message="errors?.email"
       @blur="onBlur"
     />
     <br>
@@ -14,7 +14,7 @@
       v-model="form.password"
       name="password"
       label="password"
-      :error-message="errors.password"
+      :error-message="errors?.password"
     />
     <br>
     <CDatetimeInput
@@ -25,32 +25,38 @@
         'pos_info_client.birthdate_placeholder'"
       required
       class="birthdate"
-      :error-message="errors.birthdate"
+      :error-message="errors?.birthdate"
       @blur="onBlur"
     />
     <br>
-    <button
+    <c-button
       type="submit"
+      color="primary"
+      class="c-mr-15"
     >
       envoyer
-    </button>
+    </c-button>
 
-    <button
+    <c-button
       type="button"
+      color="default"
       @click="onCancel"
     >
       cancel
-    </button>
+    </c-button>
   </form>
   <br>
 </template>
 
 <script setup lang="ts">
 import * as Yup from 'yup'
-import { ref } from 'vue'
+import {
+  ref,
+  toRef,
+  reactive,
+} from 'vue'
 
 import { helpers } from '@long2x/cresh-ui'
-import * as yup from 'yup';
 
 Yup.addMethod(Yup.string, 'ddmmyyyy', function () {
   return this.test(
@@ -66,37 +72,41 @@ Yup.addMethod(Yup.string, 'ddmmyyyy', function () {
   )
 })
 
-const form = ref({
+const form = reactive({
   email: '',
   password: '',
   birthdate: '',
 })
 
-const errors = ref()
+const errors = ref<Record<string, string> | undefined>({})
 
 const {
   validate,
   reset,
 } = helpers.yupHelper.useYupHelper({
-  fields: form,
-  schema: yup.object({
+  fields: toRef(form),
+  schema: Yup.object({
     email: Yup.string().email().required(),
     password: Yup.string().required(),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     birthdate: (Yup.string() as any).required().ddmmyyyy(),
-  })
+  }),
+  initialValues: {
+    email: '',
+    password: '',
+    birthdate: '',
+  }
 })
 
 function onCancel () {
   reset()
-  form.value.birthdate = ''
+  errors.value = {}
 }
 
 async function onSubmit () {
   try {
     const validationResult = await validate()
     errors.value = validationResult.errors
-    // console.log('-- validation result', validationResult)
   } catch (e) {
     // console.log('----e', e)
   }

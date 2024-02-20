@@ -57,7 +57,7 @@
 <script lang="ts" setup>
 import {
   reactive,
-  ref,
+  toRef,
 } from 'vue'
 
 import {
@@ -66,7 +66,7 @@ import {
 
 import * as yup from 'yup'
 
-const form1 = ref({
+const form1 = reactive({
   firstname: '',
   lastname: '',
   email: '',
@@ -81,7 +81,7 @@ const {
   reset: resetForm1,
   validate: validateForm1,
 } = helpers.useYupHelper({
-  fields: form1,
+  fields: toRef(form1),
   schema: yup.object({
     firstname: yup.string().required(),
     lastname: yup.string().required(),

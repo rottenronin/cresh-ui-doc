@@ -16,11 +16,14 @@
 
 <script setup lang="ts">
 import * as Yup from 'yup'
-import { ref } from 'vue'
+import {
+  ref,
+  toRef,
+  reactive,
+} from 'vue'
 
 import { helpers } from '@long2x/cresh-ui'
 import * as yup from 'yup'
-
 Yup.addMethod(Yup.string, 'ddmmyyyy', function () {
   return this.test(
     'ddmmyyyy',
@@ -35,7 +38,7 @@ Yup.addMethod(Yup.string, 'ddmmyyyy', function () {
   )
 })
 
-const form = ref({
+const form = reactive<Record<string, unknown>>({
   birthdate: '',
 })
 
@@ -44,7 +47,7 @@ const errors = ref()
 const {
   validate,
 } = helpers.yupHelper.useYupHelper({
-  fields: form,
+  fields: toRef(form),
   schema: yup.object({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     birthdate: (Yup.string() as any).required().ddmmyyyy(),

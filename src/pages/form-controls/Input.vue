@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import {
+  ref,
+  reactive,
+  toRef,
+} from 'vue'
 import * as yup from 'yup'
 
 import { helpers } from '@long2x/cresh-ui'
 
 const model1 = ref<string>('')
 const model2 = ref<string>('')
-const model3 = ref({
+const model3 = reactive({
   username: '',
 })
 
@@ -19,7 +23,7 @@ const model7 = ref<string>('')
 const {
   validate: validateModel3,
 } = helpers.yupHelper.useYupHelper({
-  fields: model3,
+  fields: toRef(model3),
   schema: yup.object({
     username: yup.string().required()
   })
@@ -37,10 +41,10 @@ async function onModel3ValueChange() {
 const {
   validate: validateModel5,
 } = helpers.yupHelper.useYupHelper({
-  fields: model5,
+  fields: model5 as any,
   schema: yup.object({
     firstname: yup.string().matches(/^[a-zA-ZÀ-ÿ-.']*$/)
-  })
+  }) as any
 })
 
 async function onModel5ValueChange() {
