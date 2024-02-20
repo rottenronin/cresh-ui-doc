@@ -66,8 +66,8 @@
 </template>
 
 <script setup lang="ts">
-import { ChartOptions } from 'chart.js/auto'
-import type { ChartDataset } from 'chart.js'
+// import { ChartOptions } from 'chart.js/auto'
+// import type { ChartDataset } from 'chart.js'
 import { reactive } from 'vue'
 
 const data = reactive({
@@ -252,7 +252,7 @@ const gradients2 = [
     color3: 'rgba(64, 14, 201, 0.1)'
   }
 ]
-const datasets: ChartDataset[] = [{
+const datasets = [{
   label: 'Axe 1',
   pointBackgroundColor: 'white',
   fill: true,
@@ -271,7 +271,7 @@ const datasets: ChartDataset[] = [{
   cubicInterpolationMode: 'default',
   tension: 0.4,
 }]
-const datasets2: ChartDataset[] = [{
+const datasets2 = [{
   label: 'Axe 3',
   pointBackgroundColor: 'white',
   fill: true,
@@ -281,7 +281,7 @@ const datasets2: ChartDataset[] = [{
   cubicInterpolationMode: 'default',
   tension: 0.4,
 }]
-const options: ChartOptions = {
+const options = {
   responsive: true,
   plugins: {
     title: {
@@ -314,7 +314,7 @@ const options: ChartOptions = {
     },
   },
 }
-const options2: ChartOptions = {
+const options2 = {
   responsive: true,
   plugins: {
     title: {
@@ -347,7 +347,7 @@ const options2: ChartOptions = {
     },
   },
 }
-const options3: ChartOptions = {
+const options3 = {
   responsive: true,
   plugins: {
     title: {

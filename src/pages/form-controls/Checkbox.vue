@@ -94,7 +94,11 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import {
+  ref,
+  reactive,
+  toRef,
+} from 'vue'
 import * as yup from 'yup'
 import { helpers } from '@long2x/cresh-ui'
 
@@ -131,7 +135,7 @@ const snippet3 = `
         checked obligatoire
     </c-checkbox>
   `
-const checkbox3 = ref({
+const checkbox3 = reactive<Record<string, unknown>>({
   value: false,
   errorMessage: ''
 })
@@ -141,10 +145,10 @@ async function onCheckbox3Blur() {
     schema: yup.object({
       value: yup.boolean().oneOf([true], 'Field must be checked'),
     }),
-    fields: checkbox3,
+    fields: toRef(checkbox3),
   })
 
-  checkbox3.value.errorMessage = errors?.value || ''
+  checkbox3.errorMessage = errors?.value || ''
 }
 
 const snippet4 = `

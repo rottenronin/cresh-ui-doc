@@ -34,6 +34,7 @@
 
 <script setup lang="ts">
 import { getCurrentInstance } from 'vue'
+import '@long2x/cresh-ui/c-notify.scss'
 
 const app = getCurrentInstance()
 
@@ -72,7 +73,3 @@ function onNotifsRemove() {
   notify.clearAll()
 }
 </script>
-
-<style lang="scss">
-@import '@/styles/ui/c-notify.scss';
-</style>
