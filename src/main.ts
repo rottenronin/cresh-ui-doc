@@ -17,10 +17,15 @@ const app = createApp(App)
 
 app.component('CCodeSnippet', CCodeSnippetVue)
 
-const savedLocale = await localforageService.getItem('locale') || 'fr'
+const defaultLocale = 'fr'
 
-app.use(CreshUI as any)
-app.use(i18nPlugin(savedLocale))
-app.use(routerPlugin)
-
-app.mount('#app')
+localforageService.getItem('locale').then(savedLocale => {
+  app.use(i18nPlugin(savedLocale || defaultLocale))
+}).catch(() => {
+  app.use(i18nPlugin(defaultLocale))
+}).finally(() => {
+  app.use(CreshUI as any)
+  app.use(routerPlugin)
+  
+  app.mount('#app')
+})
