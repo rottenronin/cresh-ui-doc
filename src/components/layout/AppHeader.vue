@@ -8,6 +8,16 @@
       @click="onToggle"
     />
 
+    <router-link
+      to="/theme"
+      class="link-item"
+      :class="{
+        selected: route.path === '/theme'
+      }"
+    >
+      {{ $t('theme.title') }}
+    </router-link>
+
     <div class="flex-1" />
     <div
       class="right-header-content flex justify-content-center align-items-center"
@@ -69,6 +79,10 @@ import {
   computed,
   ref,
 } from 'vue'
+import {
+  useRoute,
+} from 'vue-router'
+
 import { localforageService } from '../../services'
 
 const i18n = useI18n()
@@ -76,6 +90,7 @@ const i18n = useI18n()
 const isLocalesDropdownVisible = ref(false)
 
 const currentLocale = computed(() => i18n.locale)
+const route = useRoute()
 
 function onToggle() {
   helpers.pubSubHelper.publish('toggle-drawer')
@@ -86,3 +101,15 @@ async function onLocaleChange({ key }: { key: string}) {
   await localforageService.setItem('locale', key)
 }
 </script>
+
+<style scoped>
+  .link-item {
+    &.selected {
+      color: rgb(var(--color-primary));
+    }
+    &:hover {
+      color: rgb(var(--color-primary));
+    }
+  }
+
+</style>

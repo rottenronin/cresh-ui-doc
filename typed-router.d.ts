@@ -68,6 +68,7 @@ declare module 'vue-router/auto/routes' {
     '/switchbutton': RouteRecordInfo<'/switchbutton', '/SwitchButton', Record<never, never>, Record<never, never>>,
     '/tabs': RouteRecordInfo<'/tabs', '/Tabs', Record<never, never>, Record<never, never>>,
     '/tag': RouteRecordInfo<'/tag', '/Tag', Record<never, never>, Record<never, never>>,
+    '/theme': RouteRecordInfo<'/theme', '/Theme', Record<never, never>, Record<never, never>>,
     '/tooltip': RouteRecordInfo<'/tooltip', '/Tooltip', Record<never, never>, Record<never, never>>,
   }
 }
