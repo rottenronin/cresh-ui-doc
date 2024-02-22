@@ -24,6 +24,12 @@ import AppHeader from './components/layout/AppHeader.vue'
 </script>
 
 <style lang="scss">
+
+// import cresh-ui style
+@import '@long2x/cresh-ui/style.css';
+// import cresh-ui default theme
+@import '@long2x/cresh-ui/default-theme.css';
+
 #app-wrapper {
   display: flex;
   flex-direction: column;
@@ -33,11 +39,14 @@ import AppHeader from './components/layout/AppHeader.vue'
 
     main#app-body {
       flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .router-view-content {
       padding: 1.25rem;
       background: #f7fcfc;
+      flex: 1;
     }
   }
 }

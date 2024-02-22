@@ -5,6 +5,14 @@
     <CButton>
       classic
     </CButton>
+
+    <CButton color="default">
+      default
+    </CButton>
+    
+    <template #description>
+      There are different colors of buttons, primary/secondary/tertiary/default...
+    </template>
   </CCodeSnippet>
 
   <CCodeSnippet :snippet="snippet2">

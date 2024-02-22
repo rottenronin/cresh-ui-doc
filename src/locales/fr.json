@@ -31,5 +31,38 @@
   },
   "banner": {
     "website_under_construction": "Le site est toujours en construction..."
+  },
+  "theme": {
+    "title": "Thème",
+    "introduction": "Cresh-ui encourage la personnalisation de thème. Elle permet la surcharge des couleurs de base ainsi que des polices de texte.",
+    "available_colors": "Couleurs disponibles",
+    "colors": {
+      "primary": "couleur primaire",
+      "secondary": "couleur secondaire",
+      "tertiary": "couleur tertiaire",
+      "shadow": "couleur de l'ombre",
+      "grey": "gris",
+      "text": "couleur du texte",
+      "warning": "couleur d'avertissement",
+      "light-grey": "gris clair",
+      "lightest-grey": "gris très clair",
+      "lightest-blue": "bleu très clair",
+      "dark": "couleur sombre",
+      "black": "noir",
+      "error": "couleur d'erreur",
+      "success": "couleur de succès",
+      "border": "couleur de bordure",
+      "white": "blanc",
+      "datatable-hover": "survol du datatable",
+      "header": "en-tête",
+      "lite-datatable-header-text-color": "couleur du texte de l'en-tête du datatable léger"
+    },
+    "available_fonts": "Fonts disponibles",
+    "fonts": {
+      "regular": "font de text pour les textes dans <p>, <span>, <div>...",
+      "semibold": "font de text pour les headline <h3>, <h4>, <h5>..",
+      "bold": "font de text le plus gras, pour les titres par examples"
+    },
+    "how_to_work": "How to work"
   }
 }

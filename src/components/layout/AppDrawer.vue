@@ -5,7 +5,7 @@
     :mobile-breakpoint="mobileBreakpoint"
   >
     <h2
-      class="text-align-center c-cursor"
+      class="text-align-center c-cursor cursor-pointer"
       @click="goto('/')"
     >
       Cresh UI

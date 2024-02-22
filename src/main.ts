@@ -6,10 +6,7 @@ import routerPlugin from './plugins/router.plugin'
 import CCodeSnippetVue
   from './components/layout/CCodeSnippet.vue'
 
-// import cresh-ui style
-import '@long2x/cresh-ui/style.css'
-// import cresh-ui default theme
-import '@long2x/cresh-ui/default-theme.css'
+
 import i18nPlugin from './plugins/i18n.plugin'
 import { localforageService } from './services'
 
@@ -24,7 +21,7 @@ localforageService.getItem('locale').then(savedLocale => {
 }).catch(() => {
   app.use(i18nPlugin(defaultLocale))
 }).finally(() => {
-  app.use(CreshUI as any)
+  app.use(CreshUI)
   app.use(routerPlugin)
   
   app.mount('#app')
